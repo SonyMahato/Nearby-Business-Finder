@@ -1,0 +1,122 @@
+[
+    {
+        "place_id": "mock_restaurant_001",
+        "name": "Bangalore Central Restaurant",
+        "address": "MG Road, Bengaluru",
+        "phone": "+91 9876543210",
+        "website": "https://example.com",
+        "rating": 4.5,
+        "reviews_count": 1250,
+        "opening_hours": [
+            "Monday: 10:00 AM - 10:00 PM",
+            "Tuesday: 10:00 AM - 10:00 PM",
+            "Wednesday: 10:00 AM - 10:00 PM",
+            "Thursday: 10:00 AM - 10:00 PM",
+            "Friday: 10:00 AM - 11:00 PM",
+            "Saturday: 10:00 AM - 11:00 PM",
+            "Sunday: 10:00 AM - 10:00 PM"
+        ],
+        "open_now": true,
+        "google_maps_url": "https://maps.google.com/",
+        "latitude": 12.9716,
+        "longitude": 77.5946,
+        "distance_km": 1.2,
+        "category": "restaurant"
+    },
+    {
+        "place_id": "mock_restaurant_002",
+        "name": "Green Leaf Restaurant",
+        "address": "Koramangala, Bengaluru",
+        "phone": "+91 9876543212",
+        "website": "https://example.com",
+        "rating": 4.6,
+        "reviews_count": 980,
+        "opening_hours": [
+            "Monday: 11:00 AM - 10:30 PM",
+            "Tuesday: 11:00 AM - 10:30 PM",
+            "Wednesday: 11:00 AM - 10:30 PM",
+            "Thursday: 11:00 AM - 10:30 PM",
+            "Friday: 11:00 AM - 11:00 PM",
+            "Saturday: 11:00 AM - 11:00 PM",
+            "Sunday: 11:00 AM - 10:30 PM"
+        ],
+        "open_now": true,
+        "google_maps_url": "https://maps.google.com/",
+        "latitude": 12.9352,
+        "longitude": 77.6245,
+        "distance_km": 4.8,
+        "category": "restaurant"
+    },
+    {
+        "place_id": "mock_cafe_001",
+        "name": "City Cafe",
+        "address": "Indiranagar, Bengaluru",
+        "phone": "+91 9876543211",
+        "website": "https://example.com",
+        "rating": 4.3,
+        "reviews_count": 740,
+        "opening_hours": [
+            "Monday: 8:00 AM - 9:00 PM",
+            "Tuesday: 8:00 AM - 9:00 PM",
+            "Wednesday: 8:00 AM - 9:00 PM",
+            "Thursday: 8:00 AM - 9:00 PM",
+            "Friday: 8:00 AM - 10:00 PM",
+            "Saturday: 8:00 AM - 10:00 PM",
+            "Sunday: 8:00 AM - 9:00 PM"
+        ],
+        "open_now": true,
+        "google_maps_url": "https://maps.google.com/",
+        "latitude": 12.9784,
+        "longitude": 77.6408,
+        "distance_km": 3.5,
+        "category": "cafe"
+    },
+    {
+        "place_id": "mock_hospital_001",
+        "name": "City Care Hospital",
+        "address": "Jayanagar, Bengaluru",
+        "phone": "+91 9876543213",
+        "website": "https://example.com",
+        "rating": 4.2,
+        "reviews_count": 530,
+        "opening_hours": [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+        ],
+        "open_now": true,
+        "google_maps_url": "https://maps.google.com/",
+        "latitude": 12.9250,
+        "longitude": 77.5938,
+        "distance_km": 5.4,
+        "category": "hospital"
+    },
+    {
+        "place_id": "mock_gym_001",
+        "name": "Fitness Plus Gym",
+        "address": "HSR Layout, Bengaluru",
+        "phone": "+91 9876543214",
+        "website": "https://example.com",
+        "rating": 4.4,
+        "reviews_count": 620,
+        "opening_hours": [
+            "Monday: 6:00 AM - 10:00 PM",
+            "Tuesday: 6:00 AM - 10:00 PM",
+            "Wednesday: 6:00 AM - 10:00 PM",
+            "Thursday: 6:00 AM - 10:00 PM",
+            "Friday: 6:00 AM - 10:00 PM",
+            "Saturday: 7:00 AM - 9:00 PM",
+            "Sunday: 7:00 AM - 9:00 PM"
+        ],
+        "open_now": true,
+        "google_maps_url": "https://maps.google.com/",
+        "latitude": 12.9116,
+        "longitude": 77.6389,
+        "distance_km": 6.2,
+        "category": "gym"
+    }
+]

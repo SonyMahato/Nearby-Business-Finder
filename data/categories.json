@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Restaurant",
+        "value": "restaurant"
+    },
+    {
+        "name": "Hotel",
+        "value": "hotel"
+    },
+    {
+        "name": "Hospital",
+        "value": "hospital"
+    },
+    {
+        "name": "Gym",
+        "value": "gym"
+    },
+    {
+        "name": "Cafe",
+        "value": "cafe"
+    },
+    {
+        "name": "Pharmacy",
+        "value": "pharmacy"
+    },
+    {
+        "name": "Bank",
+        "value": "bank"
+    },
+    {
+        "name": "Shopping Mall",
+        "value": "shopping_mall"
+    },
+    {
+        "name": "School",
+        "value": "school"
+    },
+    {
+        "name": "Supermarket",
+        "value": "supermarket"
+    }
+]

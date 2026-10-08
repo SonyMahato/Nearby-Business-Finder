@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+.header {
+    background: #1f2937;
+    color: white;
+    padding: 30px 0;
+}
+
+
+.header h1 {
+    margin: 0 0 8px;
+}
+
+
+.header p {
+    margin: 0;
+}
+
+
+.search-card {
+    background: white;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.search-card h2 {
+    margin-top: 0;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: 0;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background: #1d4ed8;
+}
+
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+.results-section {
+    margin: 25px 0 50px;
+}
+
+
+.business-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.business-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+
+.business-header h3 {
+    margin: 0;
+}
+
+
+.business-card p {
+    margin: 8px 0;
+}
+
+
+.rating {
+    font-weight: bold;
+}
+
+
+.map-link,
+.business-card a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+
+.map-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+.result-count {
+    font-weight: bold;
+}
+
+
+.loading {
+    padding: 15px;
+}
+
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+
+.empty {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}

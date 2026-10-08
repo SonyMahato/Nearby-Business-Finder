@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nearby Business Finder</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <header class="header">
+
+        <div class="container">
+
+            <h1>Nearby Business Finder</h1>
+
+            <p>
+                Find businesses near your location
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="search-card">
+
+            <h2>Find Nearby Businesses</h2>
+
+
+            <div class="form-group">
+
+                <label for="category">
+                    Business Category
+                </label>
+
+                <select id="category">
+
+                    <option value="restaurant">
+                        Restaurant
+                    </option>
+
+                    <option value="hotel">
+                        Hotel
+                    </option>
+
+                    <option value="hospital">
+                        Hospital
+                    </option>
+
+                    <option value="gym">
+                        Gym
+                    </option>
+
+                    <option value="cafe">
+                        Cafe
+                    </option>
+
+                    <option value="pharmacy">
+                        Pharmacy
+                    </option>
+
+                    <option value="bank">
+                        Bank
+                    </option>
+
+                    <option value="shopping_mall">
+                        Shopping Mall
+                    </option>
+
+                    <option value="school">
+                        School
+                    </option>
+
+                    <option value="supermarket">
+                        Supermarket
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="location">
+                    Location
+                </label>
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Enter area, city or address"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="radius">
+                    Search Radius
+                </label>
+
+                <select id="radius">
+
+                    <option value="1">
+                        1 KM
+                    </option>
+
+                    <option value="2">
+                        2 KM
+                    </option>
+
+                    <option
+                        value="5"
+                        selected
+                    >
+                        5 KM
+                    </option>
+
+                    <option value="10">
+                        10 KM
+                    </option>
+
+                    <option value="25">
+                        25 KM
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button id="searchButton">
+                Search Businesses
+            </button>
+
+        </section>
+
+
+        <section class="results-section">
+
+            <div id="status"></div>
+
+            <div id="results"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
