@@ -1,12 +1,9 @@
+
 from fastapi import APIRouter, HTTPException, Query
 
 from backend.services.places_service import search_businesses
 
-
-router = APIRouter(
-    prefix="/places",
-    tags=["Places"]
-)
+router = APIRouter(prefix="/places", tags=["Places"])
 
 
 @router.get("/nearby")
@@ -14,39 +11,58 @@ def get_nearby_businesses(
     location: str = Query(
         ...,
         min_length=2,
-        description="Address, area, or city"
+        description="Address, area, or city",
     ),
-
     category: str = Query(
-        ...,
-        min_length=2,
-        description="Business category"
+        "all",
+        description="Business category",
     ),
-
     radius: float = Query(
         5,
         gt=0,
         le=25,
-        description="Search radius in kilometers"
-    )
+        description="Search radius in kilometres",
+    ),
 ):
+    location = location.strip()
+    category = category.strip().lower()
 
-    if not location.strip():
+    if len(location) < 2:
         raise HTTPException(
             status_code=400,
-            detail="Location is required."
+            detail="Please enter a valid location.",
         )
 
-    businesses = search_businesses(
-        location=location,
-        category=category,
-        radius_km=radius
-    )
+    if not category:
+        category = "all"
+
+    try:
+        businesses = search_businesses(
+            location=location,
+            category=category,
+            radius_km=radius,
+        )
+
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=str(exc),
+        ) from exc
+
+    except Exception:
+        raise HTTPException(
+            status_code=502,
+            detail="Business search failed. Check backend terminal logs.",
+        ) from None
 
     return {
         "location": location,
         "category": category,
         "radius_km": radius,
         "count": len(businesses),
-        "businesses": businesses
+        "businesses": [
+            business.model_dump()
+            for business in businesses
+        ],
+        "data_source": "backend",
     }

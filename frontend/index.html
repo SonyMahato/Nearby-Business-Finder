@@ -1,173 +1,305 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Nearby Business Finder</title>
-
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087779">
+  <title>Nearby Business Finder</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js" defer></script>
 </head>
-
-
 <body>
 
-    <header class="header">
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="#">
+        <span class="brand-logo">NB</span>
+        <span class="brand-name">Nearby Business Finder</span>
+      </a>
 
-        <div class="container">
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#searchSection">Search</a>
+        <a href="#categories">Categories</a>
+        <a href="#featured">Businesses</a>
+      </nav>
 
-            <h1>Nearby Business Finder</h1>
+      <a class="add-business" href="#searchSection">Find a Business</a>
+    </div>
+  </header>
 
-            <p>
-                Find businesses near your location
-            </p>
+  <main>
+    <section class="hero" id="searchSection">
+      <div class="hero-pattern" aria-hidden="true"></div>
 
+      <div class="hero-content">
+        <span class="hero-eyebrow">YOUR NEIGHBOURHOOD, DISCOVERED</span>
+
+        <h1>Discover Local<br class="desktop-break"> Businesses Near You</h1>
+
+        <p class="hero-description">
+          Find nearby restaurants, hospitals, pharmacies, cafes,
+          salons, banks, and other local services.
+        </p>
+
+        <form id="searchForm" class="hero-search">
+          <div class="search-field keyword-field">
+            <span class="field-icon" aria-hidden="true">⌕</span>
+            <input
+              type="search"
+              id="nameFilter"
+              placeholder="Search by business name"
+              aria-label="Search by business name">
+          </div>
+
+          <div class="search-field location-field">
+            <span class="field-icon" aria-hidden="true">⌖</span>
+            <input
+              type="text"
+              id="locationInput"
+              name="location"
+              placeholder="Enter city or area"
+              aria-label="City or area"
+              required>
+          </div>
+
+          <div class="search-field">
+            <label for="categorySelect" class="visually-hidden">
+              Business category
+            </label>
+            <select id="categorySelect" name="category" aria-label="Business category">
+              <option value="all">All businesses</option>
+              <option value="cafe">Cafes</option>
+              <option value="restaurant">Restaurants</option>
+              <option value="hospital">Hospitals</option>
+              <option value="pharmacy">Pharmacies</option>
+              <option value="bank">Banks</option>
+              <option value="atm">ATMs</option>
+              <option value="salon">Salons</option>
+              <option value="gym">Fitness gyms</option>
+              <option value="hotel">Hotels</option>
+              <option value="supermarket">Supermarkets</option>
+              <option value="shopping_mall">Shopping malls</option>
+              <option value="school">Schools</option>
+              <option value="bakery">Bakeries</option>
+              <option value="dentist">Dentists</option>
+              <option value="doctor">Doctors and clinics</option>
+              <option value="gas_station">Gas stations</option>
+              <option value="car_repair">Car repair</option>
+              <option value="plumber">Plumbing services</option>
+              <option value="home_services">Home services</option>
+              <option value="pet_services">Pet services</option>
+              <option value="retail">Retail shops</option>
+              <option value="library">Libraries</option>
+              <option value="park">Parks</option>
+            </select>
+          </div>
+
+          <div class="search-field">
+            <label for="radiusSelect" class="visually-hidden">
+              Search radius in kilometres
+            </label>
+            <select id="radiusSelect" name="radius" aria-label="Search radius">
+              <option value="1">1 km</option>
+              <option value="2">2 km</option>
+              <option value="5" selected>5 km</option>
+              <option value="10">10 km</option>
+              <option value="25">25 km</option>
+            </select>
+          </div>
+
+          <button type="submit" id="searchButton" class="hero-search-button">
+            Search <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <p id="searchStatus" role="status" aria-live="polite"></p>
+
+        <div class="popular-locations">
+          <span>Popular searches:</span>
+          <button type="button" class="location-chip"
+                  data-location="Bengaluru">Bengaluru</button>
+          <button type="button" class="location-chip"
+                  data-location="Koramangala, Bengaluru">Koramangala</button>
+          <button type="button" class="location-chip"
+                  data-location="Indiranagar, Bengaluru">Indiranagar</button>
+        </div>
+      </div>
+
+      <div class="hero-bottom-line" aria-hidden="true"></div>
+    </section>
+
+    <section class="categories-section content-container" id="categories">
+      <div class="section-heading">
+        <h2>Browse by Category</h2>
+        <span class="heading-decoration" aria-hidden="true"></span>
+        <p>Find the services you need near you.</p>
+      </div>
+
+      <div class="category-grid">
+        <button class="category-card" type="button" data-category="salon">
+          <span class="category-icon">✂️</span>
+          <span class="category-copy"><strong>Salons</strong><small>Beauty and grooming</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="gym">
+          <span class="category-icon">💪</span>
+          <span class="category-copy"><strong>Fitness Gyms</strong><small>Health and fitness</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="hospital">
+          <span class="category-icon">🏥</span>
+          <span class="category-copy"><strong>Hospitals &amp; Clinics</strong><small>Healthcare services</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="restaurant">
+          <span class="category-icon">🍽️</span>
+          <span class="category-copy"><strong>Restaurants</strong><small>Food and dining</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="pharmacy">
+          <span class="category-icon">💊</span>
+          <span class="category-copy"><strong>Pharmacies</strong><small>Medicine and wellness</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="bank">
+          <span class="category-icon">🏦</span>
+          <span class="category-copy"><strong>Banks</strong><small>Banking services</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="cafe">
+          <span class="category-icon">☕</span>
+          <span class="category-copy"><strong>Cafes</strong><small>Coffee and snacks</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="hotel">
+          <span class="category-icon">🏨</span>
+          <span class="category-copy"><strong>Hotels</strong><small>Nearby accommodation</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="supermarket">
+          <span class="category-icon">🛒</span>
+          <span class="category-copy"><strong>Supermarkets</strong><small>Everyday essentials</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="shopping_mall">
+          <span class="category-icon">🛍️</span>
+          <span class="category-copy"><strong>Shopping Malls</strong><small>Shopping nearby</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="school">
+          <span class="category-icon">🎓</span>
+          <span class="category-copy"><strong>Schools</strong><small>Education</small></span>
+        </button>
+        <button class="category-card" type="button" data-category="gas_station">
+          <span class="category-icon">⛽</span>
+          <span class="category-copy"><strong>Gas Stations</strong><small>Fuel nearby</small></span>
+        </button>
+      </div>
+
+      <button type="button" id="viewAllCategories" class="view-all-link">
+        View All Categories <span aria-hidden="true">→</span>
+      </button>
+    </section>
+
+    <section class="featured-section" id="featured">
+      <div class="content-container">
+        <div class="section-heading">
+          <h2 id="resultsTitle">Nearby Businesses</h2>
+          <span class="heading-decoration" aria-hidden="true"></span>
+          <p id="resultCount" aria-live="polite">
+            Enter a location to discover nearby businesses.
+          </p>
         </div>
 
-    </header>
-
-
-    <main class="container">
-
-        <section class="search-card">
-
-            <h2>Find Nearby Businesses</h2>
-
-
-            <div class="form-group">
-
-                <label for="category">
-                    Business Category
-                </label>
-
-                <select id="category">
-
-                    <option value="restaurant">
-                        Restaurant
-                    </option>
-
-                    <option value="hotel">
-                        Hotel
-                    </option>
-
-                    <option value="hospital">
-                        Hospital
-                    </option>
-
-                    <option value="gym">
-                        Gym
-                    </option>
-
-                    <option value="cafe">
-                        Cafe
-                    </option>
-
-                    <option value="pharmacy">
-                        Pharmacy
-                    </option>
-
-                    <option value="bank">
-                        Bank
-                    </option>
-
-                    <option value="shopping_mall">
-                        Shopping Mall
-                    </option>
-
-                    <option value="school">
-                        School
-                    </option>
-
-                    <option value="supermarket">
-                        Supermarket
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="location">
-                    Location
-                </label>
-
-                <input
-                    type="text"
-                    id="location"
-                    placeholder="Enter area, city or address"
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="radius">
-                    Search Radius
-                </label>
-
-                <select id="radius">
-
-                    <option value="1">
-                        1 KM
-                    </option>
-
-                    <option value="2">
-                        2 KM
-                    </option>
-
-                    <option
-                        value="5"
-                        selected
-                    >
-                        5 KM
-                    </option>
-
-                    <option value="10">
-                        10 KM
-                    </option>
-
-                    <option value="25">
-                        25 KM
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <button id="searchButton">
-                Search Businesses
+        <div class="filters-panel">
+          <div class="filters-heading">
+            <h3>Refine Your Search</h3>
+            <button type="button" id="clearFiltersButton" class="clear-button">
+              Clear Filters
             </button>
+          </div>
 
-        </section>
+          <div class="filters-grid">
+            <div class="form-group">
+              <label for="openNowFilter">Opening Status</label>
+              <select id="openNowFilter">
+                <option value="">All businesses</option>
+                <option value="open">Open now</option>
+                <option value="closed">Closed</option>
+              </select>
+            </div>
 
+            <div class="form-group">
+              <label for="phoneFilter">Phone Number</label>
+              <select id="phoneFilter">
+                <option value="">All</option>
+                <option value="yes">Available</option>
+                <option value="no">Not available</option>
+              </select>
+            </div>
 
-        <section class="results-section">
+            <div class="form-group">
+              <label for="websiteFilter">Website</label>
+              <select id="websiteFilter">
+                <option value="">All</option>
+                <option value="yes">Available</option>
+                <option value="no">Not available</option>
+              </select>
+            </div>
 
-            <div id="status"></div>
+            <div class="form-group">
+              <label for="minRating">Minimum Rating</label>
+              <select id="minRating">
+                <option value="0">Any rating</option>
+                <option value="3">3+ stars</option>
+                <option value="3.5">3.5+ stars</option>
+                <option value="4">4+ stars</option>
+                <option value="4.5">4.5+ stars</option>
+              </select>
+            </div>
 
-            <div id="results"></div>
+            <div class="form-group">
+              <label for="sortSelect">Sort By</label>
+              <select id="sortSelect">
+                <option value="nearest">Nearest first</option>
+                <option value="rating">Highest rating</option>
+                <option value="name">Name A–Z</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
-        </section>
+        <div class="listing-toolbar">
+          <button type="button" id="showSavedButton" class="saved-button">
+            ♡ Saved Businesses
+          </button>
+          <button type="button" id="showAllButton" class="saved-button" hidden>
+            Back to Search Results
+          </button>
+        </div>
 
-    </main>
+        <div id="businessResults" class="business-results" aria-live="polite">
+          <div class="empty-state">
+            <span class="empty-state-icon">⌕</span>
+            <h3>Find Businesses Near You</h3>
+            <p>Enter a location above and click Search to discover nearby businesses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <div id="businessModal" class="modal" aria-hidden="true" hidden>
+    <div class="modal-content" role="dialog" aria-modal="true"
+         aria-labelledby="modalBusinessName">
+      <button type="button" id="closeModalButton"
+              class="close-modal-button" aria-label="Close details">
+        &times;
+      </button>
+      <div id="businessDetails"></div>
+    </div>
+  </div>
 
-    <script src="js/script.js"></script>
+  <footer class="site-footer">
+    <div class="content-container footer-inner">
+      <a class="brand footer-brand" href="#">
+        <span class="brand-logo">NB</span>
+        <span class="brand-name">Nearby Business Finder</span>
+      </a>
+      <p>Discover local businesses and services around you.</p>
+    </div>
+  </footer>
 
 </body>
-
 </html>
